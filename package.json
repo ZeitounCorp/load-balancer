@@ -1,15 +1,12 @@
 {
   "name": "load-balancer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "NodeJs (/NginX) load-balancer",
   "scripts": {
-    "start": "node ./lib/cpuUsage.js"
+    "start": "node -e 'console.log(42);' "
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "systeminformation": "^4.30.1"
-  }
+  "dependencies": {}
 }
