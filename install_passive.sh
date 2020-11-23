@@ -98,6 +98,7 @@ pm2START() {
   npm install
   command pm2 start server_bbb.js
   echo -e "${GREEN}-> App is now running on port 3001:${NC}\n"
+  echo -e "⚠️${YELLOW} Don't forget to run when the script exits: source ~/.nvm/nvm.sh ${NC}⚠️"
 }
 
 main() {
