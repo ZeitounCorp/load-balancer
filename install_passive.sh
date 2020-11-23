@@ -2,8 +2,8 @@
 #
 # Auto Install script for the zombie api
 #
-{
-exportNVM
+
+{ # this ensures the entire script is downloaded #
 
 # Defining colors for echo outputs
 RED='\033[0;31m'
@@ -101,4 +101,5 @@ main() {
 
 # Running the Script
 main
-}
+
+} # this ensures the entire script is downloaded #
