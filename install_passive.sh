@@ -3,7 +3,7 @@
 # Auto Install script for the zombie api
 #
 
-set -euxo pipefail
+exportNVM
 
 # Defining colors for echo outputs
 RED='\033[0;31m'
