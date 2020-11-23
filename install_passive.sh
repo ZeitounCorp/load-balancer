@@ -46,6 +46,7 @@ installNode() {
   if command -v nvm; then
     echo -e "${YELLOW}-> Installing Node@14.15.1 and NPM@6.14.8.${NC}"
     nvm install 14.15.1
+    nvm use node
     echo -e "${GREEN}-> Node@14.15.1 and NPM@6.14.8. have been installed${NC}\n"
     echo -e "${YELLOW}-> Now Installing the API from GitHub(https://github.com/ZeitounCorp/load-balancer-bbb-zombie)${NC}"
     install_api
@@ -53,6 +54,7 @@ installNode() {
     echo -e "${BLUE}-> Installing Node@14.15.1 and NPM@6.14.8.${NC}"
     exportNVM
     nvm install 14.15.1
+    nvm use node
     echo -e "${BLUE}-> Node@14.15.1 and NPM@6.14.8. have been installed${NC}\n"
     echo -e "${YELLOW}-> Now Installing the API from GitHub(https://github.com/ZeitounCorp/load-balancer-bbb-zombie)${NC}"
     install_api
