@@ -64,9 +64,12 @@ installNode() {
 exportNVM() {
   if [ ! -f "~/export_nvm.sh" ]; then
     command curl -o export_nvm.sh https://raw.githubusercontent.com/ZeitounCorp/load-balancer/master/export_nvm.sh
+    command chmod u+x ~/export_nvm.sh
+    source ~/export_nvm.sh
+  elif [ -d ~/.nvm ]; then
+    source ~/.nvm/nvm.sh
+    nvm use node
   fi
-  command chmod u+x ~/export_nvm.sh
-  source ~/export_nvm.sh
 }
 
 install_api() {
@@ -80,9 +83,9 @@ install_api() {
     command git clone https://github.com/ZeitounCorp/load-balancer-bbb-zombie.git 
   fi
   exportNVM
-  nvm use node
   echo -e "${GREEN}-> Api is now installed at ~/load-balancer-bbb-zombie${NC}\n"
   echo -e "${YELLOW}-> Now we need to install PM2 (It's a process manager to run node instance in the background)${NC}\n"
+  nvm use node
   command sudo npm install pm2 -g
   echo -e "${GREEN}-> PM2 is now installed, now configuring the server to accept incomming request${NC}\n"
   echo -e "${YELLOW}-> Now launching the app on port 3001:${NC}\n"
@@ -91,6 +94,7 @@ install_api() {
 
 pm2START() {
   command cd ~/load-balancer-bbb-zombie
+  nvm use node
   command pm2 start server_bbb.js
   echo -e "${GREEN}-> App is now running on port 3001:${NC}\n"
 }
