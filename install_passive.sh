@@ -2,7 +2,7 @@
 #
 # Auto Install script for the zombie api
 #
-
+{
 exportNVM
 
 # Defining colors for echo outputs
@@ -101,4 +101,4 @@ main() {
 
 # Running the Script
 main
-
+}
