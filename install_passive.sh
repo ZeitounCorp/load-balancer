@@ -51,7 +51,9 @@ installNode() {
     install_api
   else 
     echo -e "${BLUE}-> Installing Node@14.15.1 and NPM@6.14.8.${NC}"
-    export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
     nvm install 14.15.1
     echo -e "${BLUE}-> Node@14.15.1 and NPM@6.14.8. have been installed${NC}\n"
     echo -e "${YELLOW}-> Now Installing the API from GitHub(https://github.com/ZeitounCorp/load-balancer-bbb-zombie)${NC}"
