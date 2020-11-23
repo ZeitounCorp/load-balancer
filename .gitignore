@@ -3,3 +3,9 @@ database
 .env
 .authorized_servers.json
 .pool_of_servers.json
+
+# Ignore some servers files for the main repository
+servers/BBB/.gitignore
+servers/BBB/README.md
+servers/Load-Balancer/.gitignore
+servers/Load-Balancer/README.md

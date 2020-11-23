@@ -73,13 +73,6 @@ install_api() {
   echo -e "${YELLOW}-> Now we need to install PM2 (It's a process manager to run node instance in the background)${NC}\n"
   command sudo npm install pm2 -g
   echo -e "${GREEN}-> PM2 is now installed, now configuring the server to accept incomming request${NC}\n"
-}
-
-allowUFW() {
-  command sudo ufw allow 3001/tcp
-  command sudo ufw enable
-  echo -e "${GREEN}-> List of open ports now are:${NC}\n"
-  command sudo ufw status
   echo -e "${YELLOW}-> Now launching the app on port 3001:${NC}\n"
   pm2START
 }
