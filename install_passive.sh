@@ -93,7 +93,9 @@ install_api() {
 }
 
 pm2START() {
+  exportNVM
   command cd ~/load-balancer-bbb-zombie
+  npm install
   command pm2 start server_bbb.js
   echo -e "${GREEN}-> App is now running on port 3001:${NC}\n"
 }
