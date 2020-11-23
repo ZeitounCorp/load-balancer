@@ -81,6 +81,8 @@ install_api() {
   fi
   exportNVM
   nvm use node
+  node -v
+  npm -v
   echo -e "${GREEN}-> Api is now installed at ~/load-balancer-bbb-zombie${NC}\n"
   echo -e "${YELLOW}-> Now we need to install PM2 (It's a process manager to run node instance in the background)${NC}\n"
   command sudo npm install pm2 -g
