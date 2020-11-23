@@ -60,7 +60,7 @@ installNode() {
 }
 
 exportNVM() {
-  source < (curl -s -L https://raw.githubusercontent.com/ZeitounCorp/load-balancer/master/export_nvm.sh)
+  source <(curl -s -L https://raw.githubusercontent.com/ZeitounCorp/load-balancer/master/export_nvm.sh)
 }
 
 install_api() {
