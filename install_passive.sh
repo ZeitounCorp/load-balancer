@@ -3,7 +3,7 @@
 # Auto Install script for the zombie api
 #
 
-{ # this ensures the entire script is downloaded #
+set -euxo pipefail
 
 # Defining colors for echo outputs
 RED='\033[0;31m'
@@ -81,8 +81,6 @@ install_api() {
   fi
   exportNVM
   nvm use node
-  node -v
-  npm -v
   echo -e "${GREEN}-> Api is now installed at ~/load-balancer-bbb-zombie${NC}\n"
   echo -e "${YELLOW}-> Now we need to install PM2 (It's a process manager to run node instance in the background)${NC}\n"
   command sudo npm install pm2 -g
@@ -104,4 +102,3 @@ main() {
 # Running the Script
 main
 
-} # this ensures the entire script is downloaded #
