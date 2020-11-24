@@ -19,16 +19,16 @@ bash_has() {
 
 echo -e "${YELLOW}=> Beginning installation of the zombie api${NC}"
 
-checkIfNodeInstalled() {
-  echo -e "${YELLOW}=> Check if node is installed on the system${NC}"
-  if bash_has "node"; then
-    echo -e "${GREEN}-> Node is installed, skipping...${NC}"
-    install_api
-  else
-    echo -e "${RED}-> Node is not installed,${NC} ${GREEN}installing NodeJs via NVM(https://github.com/nvm-sh/nvm)${NC}"
-    installNVM
-  fi
-}
+# checkIfNodeInstalled() {
+#   echo -e "${YELLOW}=> Check if node is installed on the system${NC}"
+#   if bash_has "node"; then
+#     echo -e "${GREEN}-> Node is installed, skipping...${NC}"
+#     install_api
+#   else
+#     echo -e "${RED}-> Node is not installed,${NC} ${GREEN}installing NodeJs via NVM(https://github.com/nvm-sh/nvm)${NC}"
+#     installNVM
+#   fi
+# }
 
 installNVM() {
   if bash_has "curl"; then
@@ -102,7 +102,7 @@ pm2START() {
 }
 
 main() {
-  checkIfNodeInstalled
+  installNode
 }
 
 # Running the Script
