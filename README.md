@@ -3,5 +3,5 @@
 
 #### Sub-Projects Links
 
-- [BBB, the 'passive' api](https://github.com/ZeitounCorp/load-balancer-bbb-zombie)
-- [Active Load-Balancer, the 'active' api](https://github.com/ZeitounCorp/load-balancer-active-install)
+- servers/BBB now has it's own repository and is located at [BBB, the 'passive' api](https://github.com/ZeitounCorp/load-balancer-bbb-zombie)
+- servers/Load-Balancer now has it's own repository and is located at [Active Load-Balancer, the 'active' api](https://github.com/ZeitounCorp/load-balancer-active-install)
