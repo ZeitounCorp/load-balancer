@@ -100,7 +100,7 @@ pm2START() {
 }
 
 main() {
-  installNode
+  installNVM
 }
 
 # Running the Script
