@@ -35,7 +35,7 @@ installNVM() {
     command curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
     installNode
   else
-    echo -e "${GREEN}-> Downloading NVM through curl.${NC}"
+    echo -e "${GREEN}-> Downloading NVM through wget.${NC}"
     command wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.0/install.sh | bash
     installNode
   fi
@@ -44,20 +44,15 @@ installNVM() {
 installNode() {
   if command -v nvm; then
     echo -e "${YELLOW}-> Installing Node@14.15.1 and NPM@6.14.8.${NC}"
-    nvm install 14.15.1
-    nvm use node
-    echo -e "${GREEN}-> Node@14.15.1 and NPM@6.14.8. have been installed${NC}\n"
-    echo -e "${YELLOW}-> Now Installing the API from GitHub(https://github.com/ZeitounCorp/load-balancer-active-install)${NC}"
-    install_api
   else 
     echo -e "${BLUE}-> Installing Node@14.15.1 and NPM@6.14.8.${NC}"
     exportNVM
-    nvm install 14.15.1
-    nvm use node
-    echo -e "${BLUE}-> Node@14.15.1 and NPM@6.14.8. have been installed${NC}\n"
-    echo -e "${YELLOW}-> Now Installing the API from GitHub(https://github.com/ZeitounCorp/load-balancer-active-install)${NC}"
-    install_api
   fi
+  nvm install 14.15.1
+  nvm use node
+  echo -e "${GREEN}-> Node@14.15.1 and NPM@6.14.8. have been installed${NC}\n"
+  echo -e "${YELLOW}-> Now Installing the API from GitHub(https://github.com/ZeitounCorp/load-balancer-active-install)${NC}"
+  install_api
 }
 
 exportNVM() {
@@ -94,7 +89,7 @@ pm2START() {
   exportNVM
   command cd ~/load-balancer-active-install
   npm install
-  command pm2 start server_lb.js
+  command pm2 start ecosystem.config.js --watch
   echo -e "${GREEN}-> App is now running on port 3000:${NC}\n"
   echo -e "⚠️${YELLOW} Don't forget to run when the script exits: source ~/.nvm/nvm.sh ${NC}⚠️"
 }
