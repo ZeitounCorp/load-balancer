@@ -35,7 +35,7 @@ fetchingRepository() {
 addingKey() {
   echo -e "${YELLOW}=> Fetching the official docker gpg key${NC}"
   command curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-  comparingKey
+  installDocker
 }
 
 # comparingKey() {
