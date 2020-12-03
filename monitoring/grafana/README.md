@@ -17,3 +17,4 @@
 - Set ```Job``` to ```bbb```
 - Set ```Job node_exporter``` to ```bbb_node_exporter```
 - Set ```Instance``` to ```localhost```
+- Once done, don't forget to __save your Dashboard__ (top right corner on the dashboard view -> Save Dashboard)
