@@ -38,22 +38,22 @@ addingKey() {
   comparingKey
 }
 
-comparingKey() {
-   sudo apt-key fingerprint 0EBFCD88
-   echo -e "${YELLOW}=> Does the key 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88 correspond to the one in pub ? [y / n]${NC} "
-   while read -r response; 
-   do 
-     if [[ $response == y* ]]; then
-      echo -e "${GREEN}-> Great now installing Docker via official repository${NC}"
-      installDocker
-     elif [[ $response == n* ]]; then  
-      echo -e "${RED}-> Operation stopped exit 0${NC}"
-      exit 0
-     else
-      echo -e "${RED}-> We are waiting for input to be y or n${NC}"
-     fi   
-   done 
-}
+# comparingKey() {
+#    sudo apt-key fingerprint 0EBFCD88
+#    echo -e "${YELLOW}=> Does the key 9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88 correspond to the one in pub ? [y / n]${NC} "
+#    while read -r response; 
+#    do 
+#      if [[ $response == y* ]]; then
+#       echo -e "${GREEN}-> Great now installing Docker via official repository${NC}"
+#       installDocker
+#      elif [[ $response == n* ]]; then  
+#       echo -e "${RED}-> Operation stopped exit 0${NC}"
+#       exit 0
+#      else
+#       echo -e "${RED}-> We are waiting for input to be y or n${NC}"
+#      fi   
+#    done 
+# }
 
 installDocker() {
   sudo add-apt-repository \
