@@ -12,3 +12,7 @@ servers/Load-Balancer/README.md
 # Ignore Install files
 servers/BBB/INSTALL_BBB.md
 servers/Load-Balancer/INSTALL_LB.md
+monitoring/INSTALL.md
+# Ignore README.md in /monitoring
+monitoring/README.md
+monitoring/grafana/README.md
