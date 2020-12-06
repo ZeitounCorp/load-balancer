@@ -535,7 +535,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "irate(node_network_receive_bytes_total{job=\"$job_node_exporter\", instance=\"$instance\", device=\"$interface\"}[1m])*8",
+          "expr": "irate(node_network_receive_bytes_total{job=\"$job_node_exporter\", instance=\"$instance\", device=\"lo\"}[1m])*8",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
@@ -543,7 +543,7 @@
           "refId": "A"
         },
         {
-          "expr": "irate(node_network_transmit_bytes_total{job=\"$job_node_exporter\", instance=\"$instance\", device=\"$interface\"}[1m])*8",
+          "expr": "irate(node_network_transmit_bytes_total{job=\"$job_node_exporter\", instance=\"$instance\", device=\"lo\"}[1m])*8",
           "interval": "",
           "intervalFactor": 1,
           "legendFormat": "Bandiwidth {{device}} (transmit)",
