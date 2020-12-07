@@ -17,8 +17,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
-  "iteration": 1607267356705,
+  "id": 24,
+  "iteration": 1604526635876,
   "links": [],
   "panels": [
     {
@@ -113,45 +113,13 @@
       "type": "stat"
     },
     {
-      "alert": {
-        "alertRuleTags": {
-          "Server": "Visio20"
-        },
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [100],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": ["B", "10s", "now"]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "alerting",
-        "for": "5s",
-        "frequency": "10s",
-        "handler": 1,
-        "message": "The server visio20 has over 100 participants on it",
-        "name": "Number of Participants",
-        "noDataState": "no_data",
-        "notifications": []
-      },
       "aliasColors": {
         "Participants": "blue"
       },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -196,24 +164,9 @@
           "interval": "",
           "legendFormat": "Participants",
           "refId": "A"
-        },
-        {
-          "expr": "bbb_meetings_participants{job=\"bbb\", instance=\"localhost\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "Participants",
-          "refId": "B"
         }
       ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 100
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -417,43 +370,13 @@
       "type": "stat"
     },
     {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [60],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": ["C", "10s", "now"]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "alerting",
-        "for": "5s",
-        "frequency": "10s",
-        "handler": 1,
-        "message": "The cpu usage on visio20 is over 60%",
-        "name": "CPU Utilization",
-        "noDataState": "no_data",
-        "notifications": []
-      },
       "aliasColors": {
         "Participants": "blue"
       },
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "$datasource",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -477,8 +400,6 @@
         "max": true,
         "min": true,
         "show": true,
-        "sort": "current",
-        "sortDesc": true,
         "total": false,
         "values": true
       },
@@ -492,6 +413,7 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
+          "$$hashKey": "object:2952",
           "alias": "Participants",
           "yaxis": 2
         }
@@ -511,25 +433,9 @@
           "interval": "",
           "legendFormat": "Participants",
           "refId": "B"
-        },
-        {
-          "expr": "(((count(count(node_cpu_seconds_total{job=\"bbb_node_exporter\", instance=\"localhost\"}) by (cpu))) - avg(sum by (mode)(irate(node_cpu_seconds_total{job=\"bbb_node_exporter\", mode=\"idle\",instance=~\"localhost\"}[1m])))) * 100) / count(count(node_cpu_seconds_total{job=\"bbb_node_exporter\", instance=~\"localhost\"}) by (cpu))",
-          "hide": true,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "CPU Utlization",
-          "refId": "C"
         }
       ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 60
-        }
-      ],
+      "thresholds": [],
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
@@ -614,10 +520,12 @@
       "renderer": "flot",
       "seriesOverrides": [
         {
+          "$$hashKey": "object:3017",
           "alias": "Participants",
           "yaxis": 2
         },
         {
+          "$$hashKey": "object:3018",
           "alias": "CPU total utilization",
           "yaxis": 2
         }
@@ -840,6 +748,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:633",
           "format": "short",
           "label": "Participants",
           "logBase": 1,
@@ -848,6 +757,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:634",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1124,6 +1034,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:608",
           "format": "short",
           "label": "Video Participants",
           "logBase": 1,
@@ -1132,6 +1043,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:609",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -1164,7 +1076,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 5,
+        "h": 4,
         "w": 9,
         "x": 0,
         "y": 27
@@ -1250,15 +1162,16 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 5,
-        "w": 9,
+        "h": 4,
+        "w": 15,
         "x": 9,
         "y": 27
       },
       "id": 57,
       "options": {
+        "orientation": "auto",
         "reduceOptions": {
-          "calcs": ["mean"],
+          "calcs": ["lastNotNull"],
           "fields": "",
           "values": false
         },
@@ -1272,183 +1185,12 @@
           "interval": "",
           "legendFormat": "{{mountpoint}}",
           "refId": "A"
-        },
-        {
-          "expr": "(node_filesystem_size_bytes{job=\"bbb_node_exporter\", instance=\"localhost\"} - node_filesystem_avail_bytes{job=\"bbb_node_exporter\", instance=\"localhost\"}) / node_filesystem_size_bytes{job=\"bbb_node_exporter\", instance=\"localhost\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "{{mountpoint}}",
-          "refId": "B"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
       "title": "Storage Utilization",
       "type": "gauge"
-    },
-    {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [70],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": ["B", "10s", "now"]
-            },
-            "reducer": {
-              "params": [],
-              "type": "max"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "alerting",
-        "for": "5s",
-        "frequency": "10s",
-        "handler": 1,
-        "message": "The total storage used on visio20  is above 70%",
-        "name": "Storage Utilization alert",
-        "noDataState": "no_data",
-        "notifications": []
-      },
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "decimals": 1,
-          "mappings": [],
-          "thresholds": {
-            "mode": "percentage",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": [
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "/"
-            },
-            "properties": []
-          }
-        ]
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 6,
-        "x": 18,
-        "y": 27
-      },
-      "hiddenSeries": false,
-      "id": 60,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "(node_filesystem_size_bytes{job=\"bbb_node_exporter\", instance=\"localhost\", mountpoint=\"/\"} - node_filesystem_avail_bytes{job=\"bbb_node_exporter\", instance=\"localhost\", mountpoint=\"/\"}) / node_filesystem_size_bytes{job=\"bbb_node_exporter\", instance=\"localhost\", mountpoint=\"/\"}",
-          "format": "time_series",
-          "hide": false,
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{mountpoint}}",
-          "refId": "B"
-        },
-        {
-          "expr": "(node_filesystem_size_bytes{job=\"$job_node_exporter\", instance=\"$instance\"} - node_filesystem_avail_bytes{job=\"$job_node_exporter\", instance=\"$instance\"}) / node_filesystem_size_bytes{job=\"$job_node_exporter\", instance=\"$instance\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "{{mountpoint}}",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 70
-        }
-      ],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Storage Utilization",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "percentunit",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
     },
     {
       "aliasColors": {},
@@ -1467,9 +1209,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
-        "w": 9,
+        "w": 12,
         "x": 0,
-        "y": 32
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 55,
@@ -1559,9 +1301,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 7,
-        "w": 9,
-        "x": 9,
-        "y": 32
+        "w": 12,
+        "x": 12,
+        "y": 31
       },
       "hiddenSeries": false,
       "id": 42,
@@ -1638,151 +1380,13 @@
       }
     },
     {
-      "alert": {
-        "alertRuleTags": {},
-        "conditions": [
-          {
-            "evaluator": {
-              "params": [1],
-              "type": "gt"
-            },
-            "operator": {
-              "type": "and"
-            },
-            "query": {
-              "params": ["B", "10s", "now"]
-            },
-            "reducer": {
-              "params": [],
-              "type": "avg"
-            },
-            "type": "query"
-          }
-        ],
-        "executionErrorState": "alerting",
-        "for": "5s",
-        "frequency": "10s",
-        "handler": 1,
-        "message": "There is/ are unpublished recording(s) on visio20",
-        "name": "Recordings Unpublished alert",
-        "noDataState": "no_data",
-        "notifications": []
-      },
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "description": "Requires `RECORDINGS_METRICS_READ_FROM_DISK` to be enabled on the BigBlueButton Exporter",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 7,
-        "w": 6,
-        "x": 18,
-        "y": 32
-      },
-      "hiddenSeries": false,
-      "id": 61,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "percentage": false,
-      "pluginVersion": "7.1.1",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "expr": "bbb_recordings_unpublished{job=\"bbb\", instance=\"localhost\"}",
-          "interval": "",
-          "legendFormat": "Recordings Unpublished",
-          "refId": "B"
-        },
-        {
-          "expr": "bbb_recordings_unpublished{job=\"$job\", instance=\"$instance\"}",
-          "hide": true,
-          "interval": "",
-          "legendFormat": "Recordings Unpublished",
-          "refId": "A"
-        }
-      ],
-      "thresholds": [
-        {
-          "colorMode": "critical",
-          "fill": true,
-          "line": true,
-          "op": "gt",
-          "value": 1
-        }
-      ],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Recordings Unpublished",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": "Recordings ",
-          "logBase": 1,
-          "max": null,
-          "min": "0",
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
       "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 38
       },
       "id": 51,
       "panels": [],
@@ -1815,7 +1419,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 40
+        "y": 39
       },
       "heatmap": {},
       "hideZeroBuckets": true,
@@ -1889,7 +1493,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 40
+        "y": 39
       },
       "heatmap": {},
       "hideZeroBuckets": true,
@@ -1963,7 +1567,7 @@
         "h": 10,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 49
       },
       "heatmap": {},
       "hideZeroBuckets": true,
@@ -2037,7 +1641,7 @@
         "h": 10,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 49
       },
       "heatmap": {},
       "hideZeroBuckets": true,
@@ -2092,7 +1696,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 60
+        "y": 59
       },
       "id": 38,
       "panels": [],
@@ -2117,7 +1721,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 61
+        "y": 60
       },
       "hiddenSeries": false,
       "id": 40,
@@ -2189,6 +1793,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:3437",
           "format": "s",
           "label": "Response Time",
           "logBase": 1,
@@ -2197,6 +1802,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:3438",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -2231,7 +1837,7 @@
         "h": 9,
         "w": 12,
         "x": 12,
-        "y": 61
+        "y": 60
       },
       "hiddenSeries": false,
       "id": 22,
@@ -2320,6 +1926,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:3468",
           "decimals": null,
           "format": "s",
           "label": "Response Time",
@@ -2329,6 +1936,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:3469",
           "format": "short",
           "label": "",
           "logBase": 1,
@@ -2350,11 +1958,6 @@
   "templating": {
     "list": [
       {
-        "current": {
-          "selected": false,
-          "text": "default",
-          "value": "default"
-        },
         "hide": 0,
         "includeAll": false,
         "label": "Datasource",
@@ -2370,11 +1973,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "bbb",
-          "value": "bbb"
-        },
         "datasource": "$datasource",
         "definition": "label_values(bbb_exporter, job)",
         "hide": 0,
@@ -2402,11 +2000,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "bbb_node_exporter",
-          "value": "bbb_node_exporter"
-        },
         "datasource": "$datasource",
         "definition": "label_values(node_cpu_seconds_total, job)",
         "hide": 0,
@@ -2419,6 +2012,11 @@
             "selected": true,
             "text": "bbb_node_exporter",
             "value": "bbb_node_exporter"
+          },
+          {
+            "selected": false,
+            "text": "cloud_maas",
+            "value": "cloud_maas"
           }
         ],
         "query": "label_values(node_cpu_seconds_total, job)",
@@ -2434,11 +2032,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "localhost",
-          "value": "localhost"
-        },
         "datasource": "Prometheus",
         "definition": "label_values(bbb_api_up, instance)",
         "hide": 0,
@@ -2460,11 +2053,6 @@
       },
       {
         "allValue": null,
-        "current": {
-          "selected": false,
-          "text": "br-480e9932776d",
-          "value": "br-480e9932776d"
-        },
         "datasource": "Prometheus",
         "definition": "label_values(node_network_transmit_bytes_total, device)",
         "hide": 0,
@@ -2504,7 +2092,7 @@
     ]
   },
   "timezone": "",
-  "title": "BigBlueButton Server Instance",
+  "title": "BigBlueButton Server Instance (node_exporter)",
   "uid": "HIbd_CXZz3",
-  "version": 22
+  "version": 6
 }
