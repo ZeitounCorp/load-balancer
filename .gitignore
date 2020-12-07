@@ -9,9 +9,12 @@ servers/BBB/.gitignore
 servers/BBB/README.md
 servers/Load-Balancer/.gitignore
 servers/Load-Balancer/README.md
+servers/Slack-Monitoring/.gitignore
+servers/Slack-Monitoring/README.md
 # Ignore Install files
 servers/BBB/INSTALL_BBB.md
 servers/Load-Balancer/INSTALL_LB.md
+servers/Slack-Monitoring/INSTALL_SM.md
 monitoring/INSTALL.md
 # Ignore README.md in /monitoring
 monitoring/README.md
